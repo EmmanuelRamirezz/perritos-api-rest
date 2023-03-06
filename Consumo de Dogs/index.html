@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4225/4225935.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <title>Consumo de Api Rest</title>
+</head>
+
+<body>
+  <h1 class="mine-container__title">Aplicacion de perritos usando API rest</h1>
+  <!-- My dogs -->
+  <section class="first-container">
+    <article class="mine-container">
+      <div class="mine-container__title">
+        <h2>Estos son mis perritos peronales. Aprecielos!</h2>
+      </div>
+
+      <div class="mine-container__content">
+        <div class="img-container">
+          <img id="pic1" width="250" alt="Foto de un perrito">
+        </div>
+        <button id="next">
+          <p>Siguiente foto</p>
+          <img class="paw" src="https://cdn-icons-png.flaticon.com/512/4225/4225935.png" alt="patita">
+       </button>
+      </div>
+    </article>
+    <!-- Random Dogs -->
+    <article class="randomDogs-container">
+      <div class="randomDogs-container__title">
+        <h2>Elija a sus perritos favoritos</h2>
+        <div class="button__reload" id="button__reload">
+          <img src="https://cdn-icons-png.flaticon.com/512/724/724863.png" alt="boton recargar">
+        </div>
+      </div>
+      <div class="randomDogs-container__content">
+        <span id="spanError"></span>
+      <section id="randomDoggys" class="dog-info">
+        <article>
+          <div class="img-container">
+            <img id="pic2" width="250" alt="Foto de un perrito">
+          </div>
+          
+          <button id="btn1">
+            <p>Guardar Doggy en favoritos</p>
+            <img class="paw" src="https://cdn-icons-png.flaticon.com/512/4225/4225935.png" alt="patita">
+          </button>
+        </article>
+        <article>
+          <div class="img-container">
+            <img id="pic3" width="250" alt="Foto de un perrito">
+          </div>
+          <button id="btn2">
+            <p>Guardar Doggy en favoritos</p>
+            <img class="paw" src="https://cdn-icons-png.flaticon.com/512/4225/4225935.png" alt="patita">
+          </button>
+        </article>
+        <article>
+          <div class="img-container">
+            <img id="pic4" width="250" alt="Foto de un perrito">
+          </div>
+          <button id="btn3">
+            <p>Guardar Doggy en favoritos</p>
+            <img class="paw" src="https://cdn-icons-png.flaticon.com/512/4225/4225935.png" alt="patita">
+          </button>
+        </article> 
+      </section>
+      </div>
+      
+      
+    </article>
+  </section>
+ 
+  <section class="second-container">
+    <article class="your-dogs">
+      <section id="uploadingDog">
+        <h2 class="mine-container__title">¿No le gustó ningun perrito?</h2>
+        <h2 class="mine-container__title">No hay problema. Suba su propia foto</h2>
+
+        <form id = "uploadingForm" class="upload-dogs">
+          <span class="file">
+            <input type="file" name="file" id="file">
+          </span>
+          <label for="file"><span class="file">Seleccione su archivo</span></label>
+        </form>
+        <button type="button" onclick="uploadDogPic()">
+          <p>Subir foto</p>
+          <img class="paw" src="https://cdn-icons-png.flaticon.com/512/4225/4225935.png" alt="patita">
+        </button>
+      </section>
+    </article>
+    <article class="favorites-container">
+      <div class="mine-container__title">
+        <h2>Estos son sus perritos favoritos</h2>
+      </div>
+      <div >
+        <section id="favoritesDoggys" class="favorites-container__content">
+
+      </section>
+    </div>
+    </article>
+    
+  </section>
+  <footer>
+    <p>Derechos reservados. Emmanuel Ramirez 2023</p>
+  </footer>
+
+   <!-- Uso de form data -->
+
+
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script type="application/javascript">
+    jQuery('input[type=file]').change(function(){
+     var filename = jQuery(this).val().split('\\').pop();
+     var idname = jQuery(this).attr('id');
+     console.log(jQuery(this));
+     console.log(filename);
+     console.log(idname);
+     jQuery('span.'+idname).next().find('span').html(filename);
+
+    });
+    </script>
+</body>
+</html>

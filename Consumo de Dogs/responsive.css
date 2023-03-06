@@ -1,0 +1,42 @@
+@media(max-width: 1320px){
+  .first-container, .second-container{
+    flex-direction: column;
+  }
+  .mine-container{
+    width: 80%;
+  }
+  .randomDogs-container{
+    height: auto;
+  }
+  .dog-info{
+    flex-direction: column;
+  }
+  .your-dogs{
+    width: 80%;
+  }
+  .favorites-container__content{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width: 720px){
+  .favorites-container__content{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .button__reload{
+    margin: 0 auto;
+  }
+  .your-dogs, .favorites-container{
+    margin-top: 20px;
+  }
+  .randomDogs-container__title{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .favorites-container__content{
+    width: 100%;
+  }
+  .first-container, .second-container{
+    padding: 0;
+  }
+}
+
